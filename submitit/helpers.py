@@ -176,7 +176,7 @@ class RsyncSnapshot:
     def __init__(
         self,
         snapshot_dir: Path,
-        root_dir: Path = None,
+        root_dir: tp.Optional[Path] = None,
         with_submodules: bool = False,
         exclude: tp.Sequence[str] = (),
         include: tp.Sequence[str] = (),
@@ -312,7 +312,7 @@ def clean_env() -> tp.Iterator[None]:
     cluster_env = {
         x: os.environ.pop(x)
         for x in os.environ
-        if x.startswith(("SLURM_", "SUBMITIT_")) or x in distrib_names
+        if x.startswith(("SLURM_", "SLURMD_", "SRUN_", "SBATCH_", "SUBMITIT_")) or x in distrib_names
     }
     try:
         yield
