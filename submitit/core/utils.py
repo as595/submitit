@@ -18,7 +18,7 @@ import typing as tp
 from pathlib import Path
 
 import cloudpickle
-import logger
+from . import logger
 
 
 @contextlib.contextmanager
