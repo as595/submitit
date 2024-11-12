@@ -226,8 +226,6 @@ def copy_par_file(par_file: tp.Union[str, Path], folder: tp.Union[str, Path]) ->
 def pickle_load(filename: tp.Union[str, Path]) -> tp.Any:
     # this is used by cloudpickle as well
     with open(filename, "rb") as ifile:
-        print(filename)
-        logger.get_logger().info(f"pickle loading {filename}")
         return pickle.load(ifile)
 
 
