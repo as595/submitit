@@ -499,6 +499,7 @@ def _make_sbatch_string(
         "",
         "# command",
         "export SUBMITIT_EXECUTOR=slurm",
+        "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH",
         # The input "command" is supposed to be a valid shell command
         " ".join((srun_cmd, command)),
         "",
