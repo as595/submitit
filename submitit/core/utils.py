@@ -18,6 +18,7 @@ import typing as tp
 from pathlib import Path
 
 import cloudpickle
+import logger
 
 
 @contextlib.contextmanager
@@ -226,6 +227,7 @@ def pickle_load(filename: tp.Union[str, Path]) -> tp.Any:
     # this is used by cloudpickle as well
     with open(filename, "rb") as ifile:
         print(filename)
+        logger.get_logger().info(f"pickle loading {filename}")
         return pickle.load(ifile)
 
 
